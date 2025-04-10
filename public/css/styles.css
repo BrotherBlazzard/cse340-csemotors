@@ -1,6 +1,63 @@
+:root {
+  --base-color: rgb(55, 39, 79);
+  --base-50: rgba(55, 39, 79, 0.5);
+  --base-10: rgba(55, 39, 79, 0.1);
+  --secondary-color: yellowbeige;
+  --font-family: 'Acme', sans-serif;
+}
+
 /******* Change Box Model ***************/
 *,
 *:before,
 *:after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+#top-header {
+  background-color: var(--base-color);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+#top-header a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sitename {
+  letter-spacing: 5.5px;
+  font-size: 2.5rem;
+}
+
+nav {
+  background-color: #333;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul li {
+  flex: 1 1 100%;
+  padding: 15px;
+}
+
+nav ul li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: .5rem;
 }
