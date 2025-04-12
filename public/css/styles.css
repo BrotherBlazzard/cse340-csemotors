@@ -1,8 +1,9 @@
 :root {
   --base-color: rgb(55, 39, 79);
+  --base-80: rgba(55, 39, 79, 0.8);
   --base-50: rgba(55, 39, 79, 0.5);
   --base-10: rgba(55, 39, 79, 0.1);
-  --secondary-color: yellowbeige;
+  --secondary-color: rgb(77, 77, 5);
   --font-family: 'Acme', sans-serif;
 }
 
@@ -19,11 +20,26 @@ body {
   font-family: var(--font-family);
 }
 
-#top-header {
+#top-header,
+footer {
   background-color: var(--base-color);
   color: white;
   padding: 20px;
   text-align: center;
+}
+
+#top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.siteName {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+  margin-left: 3rem;
 }
 
 #top-header a {
@@ -37,20 +53,35 @@ body {
   font-size: 2.5rem;
 }
 
+#tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+
+}
+
+#btnMainMenu {
+  display: block;
+  ;
+}
+
 nav {
   background-color: #333;
 }
 
 nav ul {
   list-style: none;
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
 }
 
 nav ul li {
   flex: 1 1 100%;
   padding: 15px;
+  text-align: center;
 }
 
 nav ul li a {
@@ -60,4 +91,135 @@ nav ul li a {
   font-size: 1.5rem;
   font-weight: bold;
   padding: .5rem;
+
+}
+
+h1 {
+  text-align: center;
+  margin: 1rem;
+  font-size: 2.5rem;
+}
+
+h2 {
+  text-align: center;
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+
+#carhero,
+.grid-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+#carhero {
+  position: relative;
+}
+
+#carhero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#cardata {
+  position: absolute;
+  top: 5px;
+  left: 50px;
+  padding: 1rem;
+  color: white;
+  background-color: var(--base-80);
+  opacity: .8;
+}
+
+#title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: .5rem;
+}
+
+#features ul li {
+  list-style: none;
+  padding-left: .5rem;
+}
+
+#cta {
+  text-align: center;
+  margin: 1rem .5rem 0;
+  padding: 1rem;
+  background-color: var(--base-color);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.quad {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  place-items: center;
+}
+
+.quad img {
+  width: 150px;
+}
+
+figcaption {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: .5rem;
+}
+
+#reviews ul {
+  list-style: none;
+  font-size: 1.5rem;
+}
+
+#reviews li {
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: var(--base-10);
+  border-radius: .5rem;
+  font-size: 1.3rem;
+}
+
+#reviews ul li::before {
+  content: "📌";
+  margin-right: .5rem;
+}
+
+footer {
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 32.5em) {
+  #btnMainMenu {
+    display: none;
+  }
+
+  nav ul {
+    flex-direction: row;
+  }
+
+  #title {
+    font-size: 2rem;
+  }
+
+  #cta {
+    font-size: 1.5rem;
+  }
+
+  #cardata {
+    opacity: .9;
+  }
+
 }
